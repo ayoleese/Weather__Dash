@@ -7,8 +7,10 @@ let weather = {
     .then((response) => response.json())
     .then((data) => this.displayWeather(data));
   },
+  //TO DO:
+ //need to add for loop to grab 5 days not just 1*** 
 
-  displayWeather: function(data){
+  displayWeather: function(data){ 
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
@@ -20,6 +22,7 @@ let weather = {
     document.querySelector(".humidity").innerText = humidity;
 
   },
+
   search: function (){
     this.fetchWeather(document.querySelector(".input").value);
   }
